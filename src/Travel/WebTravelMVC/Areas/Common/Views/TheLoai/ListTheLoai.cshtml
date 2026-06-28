@@ -1,0 +1,74 @@
+﻿@using WebTravelMVC.Models
+@model IEnumerable<TheLoai>
+@{
+    ViewBag.Title = "Thể Loại";
+    Layout = "~/Areas/Common/Views/Shared/_LayoutCommon.cshtml";
+}
+<style>
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+</style>
+<br />
+<!-- ***** Contact Area Starts ***** -->
+<div class="contact-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Danh sách thể loại</h2>
+                    <span>Tất cả thể loại hiện có trong hệ thống</span><br />
+                    <a href="/Common/TheLoai/ThemMoiTheLoai" class="btn btn-primary">Thêm mới</a>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <table id="customers">
+                            <tr>
+                                <th>Thể Loại</th>
+                                <th>SL Bài Viết</th>
+                                <th>Thao Tác</th>
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <a href="/Common/BaiViet/DanhSachBaiViet?iMaTheLoai=@item.MaTheLoai" target="_blank">@item.TenTheLoai</a>
+                                    </td>
+                                    <td>@item.SoLuongBaiViet</td>
+                                    <td>
+                                        <a href="/Common/TheLoai/CapNhatTheLoai?iMaTheLoai=@item.MaTheLoai">Cập Nhật</a> |
+                                        <a href="/Common/TheLoai/XoaTheLoai?iMaTheLoai=@item.MaTheLoai">Xóa</a>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

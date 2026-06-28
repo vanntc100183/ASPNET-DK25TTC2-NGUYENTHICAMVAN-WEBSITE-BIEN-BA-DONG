@@ -1,0 +1,73 @@
+﻿@using WebTravelMVC.Models
+
+@{
+    ViewBag.Title = "Thêm mới thể loại";
+    Layout = "~/Areas/Common/Views/Shared/_LayoutCommon.cshtml";
+}
+@{
+    IEnumerable<DanhMuc> listDanhMuc = ViewBag.DanhMuc as IEnumerable<DanhMuc>;
+}
+<!-- ***** Main Banner Area Start ***** -->
+<div class="page-heading about-page-heading" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="inner-content">
+                    <h2>Thêm Mới thể loại</h2>
+                    <span>Nhập thông tin đầy đủ bên dưới</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Main Banner Area End ***** -->
+<!-- ***** Contact Area Starts ***** -->
+<div class="contact-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Bạn muốn thêm mới thể loại?</h2>
+                    <span>Nội dung thông tin thể loại</span>
+                </div>
+                @using (Html.BeginForm("ThemMoiTheLoai", "TheLoai", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <fieldset>
+                                <i>Tên Thể Loại</i>
+                                <input name="TenTheLoai" type="text" placeholder="Tên Thể Loại" required="">
+                            </fieldset>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <div class="col-lg-6">
+                            <fieldset>
+                                <i>Thuộc Danh Mục</i>
+                                <select class="form-control" name="MaDanhMuc">
+                                    @foreach (var item in listDanhMuc)
+                                    {
+                                        <option class="select2-selection__arrow" value="@item.MaDanhMuc">@item.TenDanhMuc</option>
+                                    }
+                                </select>
+                            </fieldset>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <div class="col-lg-6">
+                            <button style="width: auto">Thêm mới</button>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Contact Area Ends ***** -->
+<script>
+    CKEDITOR.replace("NoiDung");
+</script>

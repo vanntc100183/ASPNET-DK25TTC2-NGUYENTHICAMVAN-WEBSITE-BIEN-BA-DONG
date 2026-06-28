@@ -1,0 +1,7 @@
+﻿@using WebTravelMVC.Models
+@model List<TheLoai>
+
+@foreach (var item in Model)
+{
+    <li><a href="/Common/BaiViet/DanhSachBaiViet?iMaTheLoai=@item.MaTheLoai">@item.TenTheLoai (@item.SoLuongBaiViet)</a></li>
+}

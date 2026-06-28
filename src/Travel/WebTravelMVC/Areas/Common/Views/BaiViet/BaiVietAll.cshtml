@@ -1,0 +1,80 @@
+﻿@using WebTravelMVC.Models
+@model IEnumerable<BaiViet>
+@{
+    ViewBag.Title = "BaiVietAll";
+    Layout = "~/Areas/Common/Views/Shared/_LayoutCommon.cshtml";
+}
+<style>
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+</style>
+<br />
+<!-- ***** Contact Area Starts ***** -->
+<div class="contact-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Danh sách bài viết</h2>
+                    <span>Tất cả bài viết hiện có trong hệ thống</span><br />
+                    <a href="/Common/BaiViet/ThemMoiBaiViet" class="btn btn-primary">Thêm mới</a>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <table id="customers">
+                            <tr>
+                                <th>Bài Viết</th>
+                                <th>Trạng Thái</th>
+                                <th>Ngày Đăng</th>
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <a href="/Common/BaiViet/XemChiTiet?iMaBaiViet=@item.MaBaiViet" target="_blank">@item.TenBaiViet</a>
+                                    </td>
+                                    <td>
+                                        @if (item.An == 0)
+                                        {
+                                            <a href="/Common/BaiViet/AnBaiViet?iMaBaiViet=@item.MaBaiViet">Ẩn</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="/Common/BaiViet/AnBaiViet?iMaBaiViet=@item.MaBaiViet">Hiển Thị</a>
+                                        }
+                                    </td>
+                                    <td>@string.Format("{0:dd/MM/yyy}", item.NgayDang)</td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

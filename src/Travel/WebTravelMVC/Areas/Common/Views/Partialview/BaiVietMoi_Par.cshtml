@@ -1,0 +1,40 @@
+﻿@using WebTravelMVC.Models
+@model  IEnumerable<BaiViet>
+
+@foreach (var item in Model)
+{
+    <div class="col-lg-6">
+        <div class="right-first-image">
+            <div class="thumb">
+                <div class="inner-content">
+                    <h4>@item.TenBaiViet</h4>
+                    @if (item.TheLoai.TenTheLoai.Length > 30)
+                    {
+                        <span>@item.TheLoai.TenTheLoai.Substring(0, 30)</span>
+                    }
+                    else
+                    {
+                        <span>@item.TheLoai.TenTheLoai</span>
+                    }
+                </div>
+                <div class="hover-content">
+                    <div class="inner">
+                        <h4>@string.Format("{0:dd/MM/yyyy}", item.NgayDang)</h4>
+                        @if (@item.NoiDung.Length > 30)
+                        {
+                            <span>@Html.Raw(item.NoiDung.Substring(0, 30))</span>
+                        }
+                        else
+                        {
+                            <span>@Html.Raw(item.NoiDung)</span>
+                        }
+                        <div class="main-border-button">
+                            <a href="/Common/BaiViet/XemChiTiet?iMaBaiViet=@item.MaBaiViet">Xem thêm</a>
+                        </div>
+                    </div>
+                </div>
+                <img style="width:350px; height:300px" src="~/Assets/images/@item.AnhBia">
+            </div>
+        </div>
+    </div>
+}

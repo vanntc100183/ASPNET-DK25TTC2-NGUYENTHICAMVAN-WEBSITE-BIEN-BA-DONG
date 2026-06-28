@@ -1,0 +1,99 @@
+﻿@using WebTravelMVC.Models
+@model BaiViet
+@{
+    ViewBag.Title = "Cập nhật bài viết";
+    Layout = "~/Areas/Common/Views/Shared/_LayoutCommon.cshtml";
+}
+@{
+    IEnumerable<TheLoai> listTheLoai = ViewBag.ListTheLoai as IEnumerable<TheLoai>;
+}
+<!-- ***** Main Banner Area Start ***** -->
+<div class="page-heading about-page-heading" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="inner-content">
+                    <h2>Cập nhật bài Viết</h2>
+                    <span>Cập nhập thông tin đầy đủ bên dưới</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Main Banner Area End ***** -->
+<!-- ***** Contact Area Starts ***** -->
+<div class="contact-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Bạn muốn cập nhật bài viết?</h2>
+                    <span>Nội dung thông tin bài viết</span>
+                </div>
+                @using (Html.BeginForm("CapNhatBaiViet", "BaiViet", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <fieldset>
+                                <i>Mã bài viết</i>
+                                <input name="MaBaiViet" type="text" readonly value="@Model.MaBaiViet">
+                            </fieldset>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <div class="col-lg-6">
+                            <fieldset>
+                                <i>Ẩn</i>
+                                @Html.DropDownListFor(x => x.An, new SelectListItem[]{
+       new SelectListItem() {Text = "Hiển Thị", Value="0"},
+       new SelectListItem() {Text = "Ẩn", Value="1"},}, new { @class = "form-control", @name = "An" })
+                            </fieldset>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <div class="col-lg-12">
+                            <fieldset>
+                                <i>Tên bài viết</i>
+                                <input name="TenBaiViet" type="text" placeholder="Tên bài viết" required="" value="@Model.TenBaiViet">
+                            </fieldset>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <div class="col-lg-6">
+                            <fieldset>
+                                <i>Tên thể loại</i>
+                                @Html.DropDownListFor(x => x.MaTheLoai, new SelectList(listTheLoai, "MaTheLoai", "TenTheLoai"), new { @class = "form-control" })
+                            </fieldset>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <div class="col-lg-6">
+                            <i>Hình ảnh: <sapan>@Model.AnhBia</sapan></i>
+                            <input style="border: 0px; height:auto" name="AnhBia" type="file">
+                        </div>
+
+                        <div class="col-lg-12">
+                            <fieldset>
+                                <i>Nội dung</i>
+                                <textarea name="NoiDung" id="NoiDung" required>@Model.NoiDung</textarea>
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-6">
+                            <button style="width: auto">Cập Nhật</button>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Contact Area Ends ***** -->
+<script>
+    CKEDITOR.replace("NoiDung");
+</script>

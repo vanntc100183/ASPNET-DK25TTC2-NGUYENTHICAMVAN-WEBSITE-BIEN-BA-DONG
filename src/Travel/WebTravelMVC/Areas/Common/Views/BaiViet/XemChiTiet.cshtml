@@ -1,0 +1,57 @@
+﻿@using WebTravelMVC.Models
+@model BaiViet
+
+@{
+    ViewBag.Title = "Xem Chi Tiết";
+    Layout = "~/Areas/Common/Views/Shared/_LayoutCommon.cshtml";
+}
+
+<div class="page-heading about-page-heading" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="inner-content">
+                    <h2 style="background-color: #0000007a;">Danh Lam Thắng Cảnh</h2>
+                    <span style="background-color: #0000007a">Thể loại: @Model.TheLoai.TenTheLoai</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Main Banner Area End ***** -->
+<!-- ***** About Area Starts ***** -->
+<div class="about-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="right-content">
+                    <h4>@Model.TenBaiViet</h4>
+                    <small><i class="fa fa-calendar"></i> Create: @Model.NgayDang &nbsp; &nbsp; &nbsp;</small>
+                    @if (Model.NgayCapNhat != null)
+                    {
+                        <small><i class="fa fa-calendar"></i> Update: @Model.NgayCapNhat &nbsp; &nbsp; &nbsp;</small>
+                    }
+                    <small><i class="fa fa-user-o"></i> Author: @Model.TaiKhoan.HoTen</small>
+
+                    <span style="color:black!important">@Html.Raw(Model.NoiDung)</span>
+
+                    @if(Session["TaiKhoanNV"] != null)
+                    {
+                        <a href="/Common/BaiViet/XoaBaiViet?iMaBaiViet=@Model.MaBaiViet" class="btn btn-danger">Xóa</a>
+                        <a href="/Common/BaiViet/CapNhatBaiViet?iMaBaiViet=@Model.MaBaiViet" class="btn btn-primary">Cập nhật</a>
+                        <a href="/Common/BaiViet/ThemMoiBaiViet" class="btn btn-primary">Thêm mới</a>
+                        if(Model.An == 0)
+                        {
+                            <a href="/Common/BaiViet/AnBaiViet?iMaBaiViet=@Model.MaBaiViet" class="btn btn-dark">Ẩn</a>
+                        }
+                        else
+                        {
+                            <a href="/Common/BaiViet/AnBaiViet?iMaBaiViet=@Model.MaBaiViet" class="btn btn-dark">Hiển Thị</a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

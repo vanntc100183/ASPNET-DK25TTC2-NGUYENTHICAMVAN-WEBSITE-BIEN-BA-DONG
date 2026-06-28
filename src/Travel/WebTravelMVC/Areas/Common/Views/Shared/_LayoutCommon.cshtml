@@ -1,0 +1,208 @@
+﻿@using WebTravelMVC.Models
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>@ViewBag.title</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/font-awesome.css">
+    <link rel="stylesheet" href="~/Assets/css/templatemo-hexashop.css">
+    <link rel="stylesheet" href="~/Assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="~/Assets/css/lightbox.css">
+    <script src="~/Assets/ckeditor/ckeditor.js"></script>
+</head>
+
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                      <div class="logo">
+    <img src="~/Assets/images/logo4.png" alt="hexashop ecommerce templatemo" width="110" height="110">
+</div>
+
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+<ul class="nav" style="background-color: #dcdcdc;">
+                            <li class="scroll-to-section"><a href="/Common/Home/Index" class="active">Trang Chủ</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">SẢN PHẨM DU LỊCH</a>
+                                <ul>
+                                    @Html.Action("TheLoai_Par", "Partialview", new { iMaDanhMuc = 2 })
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:;">DỊCH VỤ</a>
+                                <ul>
+                                    @Html.Action("TheLoai_Par", "Partialview", new { iMaDanhMuc = 3 })
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:;">CHÍNH SÁCH</a>
+                                <ul>
+                                    @Html.Action("TheLoai_Par", "Partialview", new { iMaDanhMuc = 4 })
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:;">THÔNG TIN</a>
+                                <ul>
+                                    @Html.Action("TheLoai_Par", "Partialview", new { iMaDanhMuc = 5 })
+                                </ul>
+                            </li>
+                            @if (Session["TaiKhoanNV"] == null)
+                            {
+                                <li class="scroll-to-section"><a href="/Common/DangNhap/DangNhap">Đăng Nhập</a></li>
+                            }
+                            else
+                            {
+                                TaiKhoan tk = (TaiKhoan)Session["TaiKhoanNV"];
+
+                                <li class="submenu">
+                                    <a href="javascript:;">Quản Trị</a>
+                                    <ul>
+                                        <li><a href="#">@tk.HoTen</a></li>
+                                        <li><a href="/Common/TheLoai/ListTheLoai">Quản Lý Thể Loại</a></li>
+                                        <li><a href="/Common/BaiViet/BaiVietAll">Quản Lý Bài Viết</a></li>
+                                        <li><a href="/Common/DangNhap/DangXuatAdmin">Đăng Xuất</a></li>
+                                    </ul>
+                                </li>
+                            }
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    @RenderBody()
+    <!-- ***** Footer Start ***** -->
+    <footer style="background-color: #cd5c5c;">
+        <div class="container" >
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="first-item">
+                     <div class="logo">
+    <img src="~/Assets/images/logo4.png" alt="hexashop ecommerce templatemo" width="50" height="50">
+</div>
+
+                        <ul>
+                            <li><a href="#">Website tin tức về du lịch</a></li>
+                            <li><a href="#">hexashop@company.com</a></li>
+                            <li><a href="#">054 3222-222</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Giới Thiệu</h4>
+                    <ul>
+                        <li><a href="#">Video về Biển Ba Động</a></li>
+                        <li><a href="#">Khái quát về Biển Ba Động</a></li>
+                        <li><a href="#">Bài hát về Biển Ba Động</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Ẩm Thực Biển Ba Động</h4>
+                    <ul>
+                        <li><a href="#">Hương Rượu Sùng Phài</a></li>
+                        <li><a href="#">Ẩm thực Biển Ba Động</a></li>
+                        <li><a href="#">Món ăn bình dân</a></li>
+                        <li><a href="#">Trải nghiệm Ẩm Thực</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Dịch Vụ Du Lịch</h4>
+                    <ul>
+                        <li><a href="#">Các cơ sở lưu trú</a></li>
+                        <li><a href="#">Doanh nghiệp lữ hành</a></li>
+                        <li><a href="#">Nhà Hàng</a></li>
+                        <li><a href="#">Vui Chơi Giải Trí</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div class="under-footer">
+                        <p>
+                            Website quảng bá du lịch Biển Ba Động và các vùng miền khác.
+
+                            <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a>
+                        </p>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- jQuery -->
+    <script src="~/Assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="~/Assets/js/popper.js"></script>
+    <script src="~/Assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="~/Assets/js/owl-carousel.js"></script>
+    <script src="~/Assets/js/accordions.js"></script>
+    <script src="~/Assets/js/datepicker.js"></script>
+    <script src="~/Assets/js/scrollreveal.min.js"></script>
+    <script src="~/Assets/js/waypoints.min.js"></script>
+    <script src="~/Assets/js/jquery.counterup.min.js"></script>
+    <script src="~/Assets/js/imgfix.min.js"></script>
+    <script src="~/Assets/js/slick.js"></script>
+    <script src="~/Assets/js/lightbox.js"></script>
+    <script src="~/Assets/js/isotope.js"></script>
+
+    <!-- Global Init -->
+    <script src="~/Assets/js/custom.js"></script>
+
+    <script>
+
+        $(function () {
+            var selectedClass = "";
+            $("p").click(function () {
+                selectedClass = $(this).attr("data-rel");
+                $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("." + selectedClass).fadeOut();
+                setTimeout(function () {
+                    $("." + selectedClass).fadeIn();
+                    $("#portfolio").fadeTo(50, 1);
+                }, 500);
+
+            });
+        });
+
+    </script>
+
+</body>
+</html>

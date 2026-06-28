@@ -1,0 +1,72 @@
+﻿@using WebTravelMVC.Models
+@model TheLoai
+@{
+    ViewBag.Title = "Danh sách bài viết";
+    Layout = "~/Areas/Common/Views/Shared/_LayoutCommon.cshtml";
+}
+@{
+    List<BaiViet> listBaiViet = ViewBag.BaiViet as List<BaiViet>;
+}
+<div class="page-heading" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="inner-content">
+                    <h2>Danh Mục: @Model.TenTheLoai</h2>
+                    @*<span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Main Banner Area End ***** -->
+<!-- ***** Products Area Starts ***** -->
+<section class="section" id="products">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in listBaiViet)
+            {
+                <div class="col-lg-4">
+                    <div class="item">
+                        <div class="thumb">
+                            <div class="hover-content">
+                                <ul>
+                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <img style="height:300px; width:350px; " src="~/Assets/images/@item.AnhBia" alt="">
+                        </div>
+                        <div class="down-content">
+                            <a href="~/Common/BaiViet/XemChiTiet?iMaBaiViet=@item.MaBaiViet">
+                                <h4>@item.TenBaiViet</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+            @*<div class="col-lg-12">
+                <div class="pagination">
+                    <ul>
+                        <li>
+                            <a href="#">1</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">4</a>
+                        </li>
+                        <li>
+                            <a href="#">&gt;</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>*@
+        </div>
+    </div>
+</section>

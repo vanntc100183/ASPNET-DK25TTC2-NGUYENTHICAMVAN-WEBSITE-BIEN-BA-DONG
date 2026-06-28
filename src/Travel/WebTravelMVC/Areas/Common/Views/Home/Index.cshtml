@@ -1,0 +1,409 @@
+﻿@using WebTravelMVC.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Common/Views/Shared/_LayoutCommon.cshtml";
+}
+@{
+    IEnumerable<BaiViet> listBaiVietNoiBat = ViewBag.NoiBat as IEnumerable<BaiViet>;
+    IEnumerable<BaiViet> listBaiViet = ViewBag.DoanhNghiepvaLuHanh as IEnumerable<BaiViet>;
+}
+<!-- ***** Main Banner Area Start ***** -->
+<div class="main-banner" id="top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="left-content">
+                    <div class="thumb">
+                        <div class="inner-content">
+                            <h4>Khám phá biển Ba Động Trà Vinh những ngày hè</h4>
+                            <span>Nếu bạn muốn tìm một nơi xoa diệu cái nắng oi bức của mùa hè thì Ba Động là một lựa chọn tuyệt vời khi đến Trà Vinh</span>
+                            <div class="main-border-button">
+                                <a href="~/Common/BaiViet/XemChiTiet?iMaBaiViet=6">Xem Thêm</a>
+                            </div>
+                        </div>
+                        <img style="width:730px; height:628px" src="~/Assets/images/bbd1.jpg" />
+                    </div>
+                </div>
+            </div>
+            <!-- #region Bài mới -->
+            <div class="col-lg-6">
+                <div class="right-content">
+                    <div class="row">
+                        <!-- #region Bài viết mới -->
+                        @Html.Action("BaiVietMoi_Par", "Partialview")
+                        <!-- #endregion -->
+                    </div>
+                </div>
+            </div>
+            <!-- #endregion -->
+        </div>
+    </div>
+</div>
+<!-- ***** Main Banner Area End ***** -->
+<!-- ***** Men Area Starts ***** -->
+<section class="section" id="men">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-heading">
+                    <h2>Check in công trình điện gió</h2>
+                    <span>Những tua bin gió khổng lồ không ngừng làm việc như một sự kết hợp hài hòa với biển cả.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="men-item-carousel">
+                    <div class="owl-men-item owl-carousel">
+                        @foreach (var item in listBaiVietNoiBat)
+                        {
+                            <div class="item">
+                                <div class="thumb">
+                                    <img style="width:350px; height:300px" src="~/Assets/images/@item.AnhBia" alt="">
+                                </div>
+                                <div class="down-content">
+                                    <h4>@item.TenBaiViet</h4>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Men Area Ends ***** -->
+<!-- ***** Women Area Starts ***** -->
+<section class="section" id="women">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-heading">
+                    <h2>Thưởng thức đặc sản</h2>
+                    <span>Đừng bỏ lỡ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="women-item-carousel">
+                    <div class="owl-women-item owl-carousel">
+                        @foreach (var item in listBaiViet)
+                        {
+                            <div class="item">
+                                <div class="thumb">
+                                    <img style="width:350px; height:300px" src="~/Assets/images/@item.AnhBia" alt="">
+                                </div>
+                                <div class="down-content">
+                                    <h4>@item.TenBaiViet</h4>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Women Area Ends ***** -->
+<!-- ***** Kids Area Starts ***** -->
+<section class="section" id="kids" style="display:none">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-heading">
+                    <h2>Kid's Latest</h2>
+                    <span>Details to details is what makes Hexashop different from the other themes.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="kid-item-carousel">
+                    <div class="owl-kid-item owl-carousel">
+                        <div class="item">
+                            <div class="thumb">
+                                <div class="hover-content">
+                                    <ul>
+                                        <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                    </ul>
+                                </div>
+                                <img src="~/Assets/images/kid-01.jpg" alt="">
+                            </div>
+                            <div class="down-content">
+                                <h4>School Collection</h4>
+                                <span>$80.00</span>
+                                <ul class="stars">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="thumb">
+                                <div class="hover-content">
+                                    <ul>
+                                        <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                    </ul>
+                                </div>
+                                <img src="~/Assets/images/kid-02.jpg" alt="">
+                            </div>
+                            <div class="down-content">
+                                <h4>Summer Cap</h4>
+                                <span>$12.00</span>
+                                <ul class="stars">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="thumb">
+                                <div class="hover-content">
+                                    <ul>
+                                        <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                    </ul>
+                                </div>
+                                <img src="~/Assets/images/kid-03.jpg" alt="">
+                            </div>
+                            <div class="down-content">
+                                <h4>Classic Kid</h4>
+                                <span>$30.00</span>
+                                <ul class="stars">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="thumb">
+                                <div class="hover-content">
+                                    <ul>
+                                        <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                    </ul>
+                                </div>
+                                <img src="~/Assets/images/kid-01.jpg" alt="">
+                            </div>
+                            <div class="down-content">
+                                <h4>Classic Spring</h4>
+                                <span>$120.00</span>
+                                <ul class="stars">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Kids Area Ends ***** -->
+<!-- ***** Explore Area Starts ***** -->
+<section class="section" id="explore">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="left-content">
+                    <h2>Biển Ba Động</h2>
+                    <span>Biển Ba Động - Trà Vinh có nhiều tiềm năng phát triển du lịch, bao gồm biển và khu du lịch sinh thái rừng ngập mặn đang được đề xuất đầu tư khai thác.</span>
+                    <div class="quote">
+                        <i class="fa fa-quote-left"></i><p>Cái tên Ba Động bắt nguồn từ thực tế khi thủy triều lên, xuống thì bờ biển nổi lên ba động cát, gồm hai động nhỏ và một động lớn có hình dạng độc đáo. Bãi biển này được người Pháp khám phá và khai thác từ những năm đầu của thế kỷ XX.</p>
+                    </div>
+                    <p>
+                        Khu du lịch biển Ba Động nằm giữa 2 cửa biển Cung Hầu (sông Tiền) và Định An (sông Hậu). Nơi đây có bãi cát dài hơn 10 km, nước biển trong xanh, tuyệt đẹp. Đến bãi biển, du khách sẽ ấn tượng bởi những hàng phi lao xanh rì trải dọc theo bờ biển
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="right-content">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="first-image">
+                                <img src="~/Assets/images/anh1.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="first-image">
+                                <img src="~/Assets/images/anh2.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="second-image">
+                                <img src="~/Assets/images/anh3.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="second-image">
+                            <img src="~/Assets/images/anh4.jpg" alt="">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- ***** Explore Area Ends ***** -->
+<!-- ***** Social Area Starts ***** -->
+<section class="section" id="social" style="display:none">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>ảNH gÂ</h2>
+                    <span>Details to details is what makes Hexashop different from the other themes.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row images">
+            <div class="col-2">
+                <div class="thumb">
+                    <div class="icon">
+                        <a href="http://instagram.com">
+                            <h6>Fashion</h6>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                    <img src="~/Assets/images/instagram-01.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="thumb">
+                    <div class="icon">
+                        <a href="http://instagram.com">
+                            <h6>New</h6>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                    <img src="~/Assets/images/instagram-02.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="thumb">
+                    <div class="icon">
+                        <a href="http://instagram.com">
+                            <h6>Brand</h6>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                    <img src="~/Assets/images/instagram-03.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="thumb">
+                    <div class="icon">
+                        <a href="http://instagram.com">
+                            <h6>Makeup</h6>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                    <img src="~/Assets/images/instagram-04.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="thumb">
+                    <div class="icon">
+                        <a href="http://instagram.com">
+                            <h6>Leather</h6>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                    <img src="~/Assets/images/instagram-05.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="thumb">
+                    <div class="icon">
+                        <a href="http://instagram.com">
+                            <h6>Bag</h6>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                    <img src="~/Assets/images/instagram-06.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Social Area Ends ***** -->
+<!-- ***** Subscribe Area Starts ***** -->
+<div class="subscribe">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="section-heading">
+                    <h2>Nhận thông tin thông báo</h2>
+                    <span>Nhập địa chỉ Email của bạn. Hệ thống sẽ thông báo khi có bài viết mới</span>
+                </div>
+                <form id="subscribe" action="" method="get">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <fieldset>
+                                <input name="name" type="text" id="name" placeholder="Địa chỉ Email" required="">
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-5">
+                            <fieldset>
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-2">
+                            <fieldset>
+                                <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4">
+                <div class="row">
+                    <div class="col-6">
+                        <ul>
+                            <li>Address:<br><span>TP. Biển Ba Động</span></li>
+                            <li>Phone:<br><span>099 3222-222</span></li>
+                            <li>:<br><span>North Miami Beach</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul>
+                            <li>Giờ làm việc:<br><span>07:30 AM - 17:30</span></li>
+                            <li>Email:<br><span>Bienbadong@company.com</span></li>
+                            <li>Website:<br><span><a href="#">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Behance</a>, <a href="#">Linkedin</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Subscribe Area Ends ***** -->

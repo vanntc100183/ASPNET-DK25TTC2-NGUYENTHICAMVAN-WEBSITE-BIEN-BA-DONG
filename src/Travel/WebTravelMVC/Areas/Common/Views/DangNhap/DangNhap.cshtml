@@ -1,0 +1,73 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/Assets/Login/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="~/Assets/Login/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Assets/Login/css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="~/Assets/Login/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="~/Assets/KhachHang/img/logo/VT2.png">
+
+    <title>Trang Đăng Nhập</title>
+</head>
+<body>
+    <div class="half">
+        <div class="bg order-1 order-md-2" style="background-image: url('/Assets/images/AnhDuLich.jpg'); object-fit:cover!important"></div>
+        <div class="contents order-2 order-md-1">
+
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-6">
+                        <div class="form-block">
+                            <div class="text-center mb-5">
+                                <h3><strong>TRAVEL</strong></h3>
+                            </div>
+                            @using (Ajax.BeginForm("DangNhap", "DangNhap", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "ThongBao" }))
+                            {
+                                <div class="form-group first">
+                                    <label for="username">Tên Đăng Nhập</label>
+                                    <input type="text" class="form-control" placeholder="Tên đăng nhập..." name="txtTaiKhoan">
+                                </div>
+                                <div class="form-group last mb-3">
+                                    <label for="password">Mật Khẩu</label>
+                                    <input type="password" class="form-control" placeholder="Mật khẩu..." name="txtMatKhau">
+                                </div>
+                                <div class="ThongBao" id="ThongBao">
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+                                </div>
+                                <div class="d-sm-flex mb-5 align-items-center">
+                                    <label class="control control--checkbox mb-3 mb-sm-0">
+                                        <span class="caption">Nhớ mật khẩu</span>
+                                        <input type="checkbox" checked="checked" />
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <span class="ml-auto"><a href="#" class="forgot-pass">Quên mật khẩu/ </a><a class="forgot-pass" href="#">Đăng ký</a></span>
+                                </div>
+                                <input type="submit" value="Đăng Nhập" class="btn btn-block btn-primary">}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="~/Assets/Login/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Assets/Login/js/popper.min.js"></script>
+    <script src="~/Assets/Login/js/bootstrap.min.js"></script>
+    <script src="~/Assets/Login/js/main.js"></script>
+</body>
+</html>
