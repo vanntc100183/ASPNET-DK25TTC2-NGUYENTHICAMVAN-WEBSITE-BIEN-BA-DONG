@@ -17,7 +17,7 @@
 
 ## Giới thiệu
 
-| Thông tin | Chi tiết |
+| Thông tin | Chi tiết đồ án |
 |---|---|
 | Tên đồ án | Website Du Lịch Biển Ba Động - Trà Vinh |
 | Công nghệ | ASP.NET MVC 5, Entity Framework 6, SQL Server |
