@@ -1,4 +1,4 @@
-update tuan 1 dự án
+update tuần 1 dự án
 - Tên đề tài:Xây dựng website quảng bá du lịch biển Ba Động.
 - Thời gian thực hiện:23/06/2026 - 30/06/2026.
 - Trọng tâm công việc:Giai đoạn chuẩn bị và nghiên cứu lý thuyết cơ sở.
