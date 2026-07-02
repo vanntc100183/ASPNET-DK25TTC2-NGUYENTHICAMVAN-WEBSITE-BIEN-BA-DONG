@@ -1,0 +1,24 @@
+Tuần 2
+BÁO CÁO TIẾN ĐỘ ĐỒ ÁN - TUẦN 2
+
+- Tên đề tài:Xây dựng website quảng bá du lịch biển Ba Động
+- Thời gian thực hiện:29/06/2026 - 05/07/2026
+- Trọng tâm công việc:Phân tích thiết kế hệ thống và Cơ sở dữ liệu
+. Nội dung công việc
+- Khảo sát thực tế nhu cầu lưu trữ và quản lý dữ liệu (áp dụng theo đặc tả nghiệp vụ của hệ thống).
+- Xác định rõ ràng các yêu cầu chức năng (bao gồm 14 chức năng chính phân chia cho phân hệ Khách hàng và Admin) cùng các yêu cầu phi chức năng như tính bảo mật, hiệu năng vận hành và độ tương thích trình duyệt.
+- Vẽ sơ đồ Use-case tổng quát mức 0 để định hình luồng tương tác.
+- Thiết kế mô hình quan hệ dữ liệu cấu trúc (ERD) trực tiếp trên hệ quản trị cơ sở dữ liệu SQL Server.
+
+2. Tài liệu liên quan
+- Các tài liệu chuẩn về phân tích và thiết kế hệ thống phần mềm.
+- Tài liệu hướng dẫn quản trị và tối ưu hóa SQL Server.
+- Đặc tả cấu trúc các bảng thuộc hệ thống Identity mặc định (`AspNetUsers`, `AspNetRoles`,...) và các bảng nghiệp vụ cốt lõi của hệ thống (`Laptop`, `Hang`, `TinTuc`, `ChuDe`, `BinhLuan`).
+
+3. Khó khăn gặp phải
+- Gặp trở ngại khi thiết kế các mối quan hệ ràng buộc khóa chính/khóa ngoại phức tạp giữa các bảng dữ liệu `Laptop`, `MetaLaptop` và `Hang`.
+- Gặp khó khăn trong việc kết nối đồng bộ và tùy biến hệ thống phân quyền mặc định của ASP.NET Identity theo kiến trúc cơ sở dữ liệu mới.
+
+4. Kết quả đạt được
+- Xây dựng thành công Từ điển dữ liệu chi tiết gồm 14 bảng cấu trúc cụ thể.
+- Hoàn thiện sơ đồ cơ sở dữ liệu (Database Diagram) hoàn chỉnh, sẵn sàng cho giai đoạn lập trình.
