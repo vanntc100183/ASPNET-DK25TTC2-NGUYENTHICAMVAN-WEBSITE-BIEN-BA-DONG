@@ -1,1 +1,20 @@
+BÁO CÁO TIẾN ĐỘ ĐỒ ÁN - TUẦN 3
+- Tên đề tài:Xây dựng website quảng bá du lịch biển Ba Động.
+- Thời gian thực hiện: 06/07/2026 - 12/07/2026.
+- Trọng tâm công việc: Hiện thực hóa code chức năng cốt lõi (Phía Khách hàng).
+1. Nội dung công việc
+- Cấu hình chuỗi kết nối cơ sở dữ liệu (Connection String) trong file hệ thống `Web.config`.
+- Tiến hành xây dựng mã nguồn xử lý cho các giao diện phía Khách hàng: Màn hình trang chủ, danh sách sản phẩm, bộ lọc tìm kiếm theo Hãng và theo Nhu cầu.
+- Lập trình logic chức năng Giỏ hàng (cho phép thêm sản phẩm, sửa đổi số lượng, xóa sản phẩm) cùng luồng Đặt hàng trực tuyến và Xem lại lịch sử mua hàng.
+
+ 2. Tài liệu liên quan
+- Tài liệu kỹ thuật chuyên sâu về ASP.NET Routing và cơ chế trả về dữ liệu ActionResults.
+- Tài liệu hướng dẫn sử dụng `Session` trong ASP.NET nhằm lưu trữ trạng thái giỏ hàng tạm thời của người dùng.
+
+3. Khó khăn gặp phải
+- Việc xử lý đồng bộ dữ liệu giỏ hàng gặp lỗi khi người dùng thay đổi số lượng trực tiếp tại giao diện front-end mà không làm tải lại toàn bộ trang (Page Refresh). 
+- Đòi hỏi phải nghiên cứu và áp dụng kết hợp kỹ thuật AJAX cùng thư viện jQuery để xử lý bất đồng bộ.
+
+4. Kết quả đạt được
+- Vận hành ổn định luồng nghiệp vụ mua hàng trọn vẹn: Từ bước xem sản phẩm, tương tác giỏ hàng cho đến khi lưu vết đơn hàng thành công vào cơ sở dữ liệu.
 
