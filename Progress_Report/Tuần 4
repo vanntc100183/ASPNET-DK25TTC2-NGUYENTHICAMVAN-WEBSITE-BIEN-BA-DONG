@@ -1,1 +1,22 @@
+BÁO CÁO TIẾN ĐỘ ĐỒ ÁN - TUẦN 4
+
+- Tên đề tài:Xây dựng website quảng bá du lịch biển Ba Động
+- Thời gian thực hiện:13/07/2026 - 19/07/2026
+- Trọng tâm công việc:Hiện thực hóa code chức năng quản trị (Phía Admin) và bổ sung tính năng cải tiến
+1. Nội dung công việc
+- Tích hợp giao diện quản trị mẫu Bootstrap SB Admin 2 vào cấu trúc Layout Admin của dự án.
+- Viết mã nguồn thực hiện các chức năng CRUD (Create, Read, Update, Delete) cho các thực thể hệ thống: Quản lý sản phẩm (Laptop), Quản lý thể loại, Quản lý đơn hàng và Quản lý bài viết tin tức.
+- Thiết lập module giao diện dành cho việc Quản lý vai trò và cấu hình phân quyền người dùng.
+ 2. Tài liệu liên quan
+- Tài liệu thư viện ASP.NET Identity.
+- Tài liệu cấu hình phân quyền dựa trên vai trò (Role-based Authorization) phân định giữa quyền Admin và Khách hàng.
+
+3. Khó khăn gặp phải
+- Gặp trở ngại lớn khi tích hợp thêm các chức năng nâng cao theo đề xuất cải tiến như: Thiết lập tính năng thông báo nổi (Toast Notification) thời gian thực khi hệ thống ghi nhận có đơn hàng mới.
+- Gặp khó khăn khi viết logic gợi ý thông minh, tự động kiểm tra trùng khớp thông tin khách hàng cũ dựa trên bộ dữ liệu có sẵn để gợi ý tạo mới hoặc liên kết profile khách hàng tại trang Admin.
+- Việc thử nghiệm cấu hình Realtime tiêu tốn rất nhiều thời gian nghiên cứu và chỉnh sửa cấu hình hệ thống.
+
+4. Kết quả đạt được
+- Hoàn thiện toàn bộ các màn hình quản trị dữ liệu CRUD phía giao diện Admin.
+- Tích hợp thành công phần phân quyền cơ bản bảo vệ các tuyến đường dẫn (Route) của Admin.
 
