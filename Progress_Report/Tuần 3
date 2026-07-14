@@ -2,6 +2,7 @@ BÁO CÁO TIẾN ĐỘ ĐỒ ÁN - TUẦN 3
 - Tên đề tài:Xây dựng website quảng bá du lịch biển Ba Động.
 - Thời gian thực hiện: 06/07/2026 - 12/07/2026.
 - Trọng tâm công việc: Hiện thực hóa code chức năng cốt lõi (Phía Khách hàng).
+
 1. Nội dung công việc
 - Cấu hình chuỗi kết nối cơ sở dữ liệu (Connection String) trong file hệ thống `Web.config`.
 - Tiến hành xây dựng mã nguồn xử lý cho các giao diện phía Khách hàng: Màn hình trang chủ, danh sách sản phẩm, bộ lọc tìm kiếm theo Hãng và theo Nhu cầu.
