@@ -2,7 +2,7 @@ update tuần 1 dự án
 - Tên đề tài:Xây dựng website quảng bá du lịch biển Ba Động.
 - Thời gian thực hiện:23/06/2026 - 30/06/2026.
 - Trọng tâm công việc:Giai đoạn chuẩn bị và nghiên cứu lý thuyết cơ sở.
-
+- 
 1. Nội dung công việc
 - Xác định rõ lý do chọn đề tài "Xây dựng website quảng bá du lịch biển Ba Động", thiết lập mục tiêu, đối tượng và phạm vi nghiên cứu cụ thể của đồ án.
 - Nghiên cứu và tìm hiểu tổng quan về framework ASP.NET MVC 5 và hoạt động của giao thức HTTP.
