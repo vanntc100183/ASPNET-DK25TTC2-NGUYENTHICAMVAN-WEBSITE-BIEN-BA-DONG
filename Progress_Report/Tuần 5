@@ -1,1 +1,26 @@
+# BÁO CÁO TIẾN ĐỘ ĐỒ ÁN - TUẦN 5
+**Đề tài:** Xây dựng website Quảng bá du lịch biển Ba Động
+**Thời gian thực hiện:** 20/07/2026 - 26/07/2026
+**Giai đoạn:** Kiểm thử, Tối ưu và Hoàn thiện báo cáo.
+
+## 1. Nội dung công việc
+- Thực hiện kiểm thử chức năng (Functional Testing) trên toàn bộ hệ thống: Kiểm tra tính đúng đắn của dữ liệu đầu vào, kiểm tra liên kết.
+- Kiểm thử độ tương thích giao diện (Responsive Testing) trên các trình duyệt phổ biến (Chrome, Edge, Firefox) và các kích thước màn hình thiết bị khác nhau.
+- Tối ưu hóa tốc độ tải trang bằng cách tối giản hóa mã nguồn (Minify JS/CSS), tối ưu kích thước hình ảnh cảnh quan du lịch.
+- Fix toàn bộ các lỗi logic và lỗi hiển thị phát hiện trong quá trình kiểm thử.
+- Hoàn thiện các chương còn lại của quyển báo cáo đồ án tốt nghiệp (Chương phân tích, Chương hiện thực, Kết luận và Hướng phát triển).
+- Đóng gói mã nguồn dự án và chuẩn bị slide thuyết minh cho buổi bảo vệ đồ án.
+
+ 2. Tài liệu liên quan
+- Kịch bản kiểm thử (Test Cases) tự biên soạn cho ứng dụng web quảng bá du lịch.
+- Các công cụ đo lường hiệu năng trực quan như Google Lighthouse, PageSpeed Insights.
+- Quy định định dạng và trình bày báo cáo đồ án tốt nghiệp của nhà trường.
+
+3. Khó khăn gặp phải
+- Một số hình ảnh chất lượng cao về du lịch biển Ba Động có dung lượng lớn gây chậm tiến trình tải trang ban đầu, đòi hỏi phải tìm giải pháp nén ảnh mà không giảm chất lượng đáng kể.
+- Việc căn chỉnh định dạng mục lục, hình ảnh, bảng biểu trong file báo cáo Word tuân thủ đúng template chuẩn của nhà trường mất khá nhiều thời gian.
+
+ 4. Kết quả đạt được
+- Hệ thống website hoạt động ổn định, mượt mà, không còn lỗi nghiêm trọng.
+- Hoàn thành 100% quyển báo cáo đồ án bản mềm và slide thuyết trình, sẵn sàng cho hội.
 
