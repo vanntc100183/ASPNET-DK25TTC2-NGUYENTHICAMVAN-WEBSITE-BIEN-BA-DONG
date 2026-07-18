@@ -1,23 +1,26 @@
-BÁO CÁO TIẾN ĐỘ ĐỒ ÁN - TUẦN 4
+Tuan_4.md
+Markdown
+# BÁO CÁO TIẾN ĐỘ ĐỒ ÁN - TUẦN 4
+**Đề tài:** Xây dựng website Quảng bá du lịch biển Ba Động
+**Thời gian thực hiện:** 13/07/2026 - 19/07/2026
+**Giai đoạn:** Lập trình chức năng hệ thống (Back-end)
 
-- Tên đề tài:Xây dựng website quảng bá du lịch biển Ba Động.
-- Thời gian thực hiện:13/07/2026 - 19/07/2026
-- Trọng tâm công việc:Hiện thực hóa code chức năng quản trị (Phía Admin) và bổ sung tính năng cải tiến.
+## 1. Nội dung công việc
+- Hiện thực hóa chức năng Đăng nhập, Phân quyền người dùng (Authentication & Authorization) bằng Session hoặc ASP.NET Identity.
+- Phát triển các chức năng CRUD (Thêm, Xóa, Sửa, Hiển thị) cho các danh mục quản lý tại trang Admin: Quản lý bài viết du lịch, Quản lý điểm đến, Quản lý món ăn đặc sản Ba Động.
+- Viết các Controller xử lý logic đổ dữ liệu động từ SQL Server ra các View phía Client (hiển thị danh sách tin tức theo phân trang, chi tiết bài viết).
+- Tích hợp trình soạn thảo văn bản CKEditor và trình quản lý file CKFinder vào trang quản trị để hỗ trợ biên tập bài viết quảng bá du lịch sinh động hơn.
+- Xây dựng module nhận thông tin liên hệ và phản hồi từ khách truy cập website.
 
-1. Nội dung công việc
-- Tích hợp giao diện quản trị mẫu Bootstrap SB Admin 2 vào cấu trúc Layout Admin của dự án.
-- Viết mã nguồn thực hiện các chức năng CRUD (Create, Read, Update, Delete) cho các thực thể hệ thống: Quản lý sản phẩm (Laptop), Quản lý thể loại, Quản lý đơn hàng và Quản lý bài viết tin tức.
-- Thiết lập module giao diện dành cho việc Quản lý vai trò và cấu hình phân quyền người dùng.
+## 2. Tài liệu liên quan
+- Tài liệu API của thư viện CKEditor và CKFinder dành cho .NET.
+- Mã nguồn mẫu về kỹ thuật phân trang (PagedList.Mvc) trong ASP.NET MVC.
+- Các bài viết hướng dẫn bảo mật form, chống tấn công CSRF bằng `@Html.AntiForgeryToken()`.
 
- 2. Tài liệu liên quan
-- Tài liệu thư viện ASP.NET Identity.
-- Tài liệu cấu hình phân quyền dựa trên vai trò (Role-based Authorization) phân định giữa quyền Admin và Khách hàng.
+## 3. Khó khăn gặp phải
+- Việc tích hợp và cấu hình đường dẫn tuyệt đối/tương đối cho CKFinder để upload hình ảnh lên server gặp lỗi phân quyền truy cập thư mục ứng dụng.
+- Xử lý logic tìm kiếm và lọc dữ liệu đa điều kiện (lọc địa điểm theo loại hình, giá cả, đánh giá) trên Controller còn chậm, cần tối ưu lại các câu lệnh LINQ.
 
-3. Khó khăn gặp phải
-- Gặp trở ngại lớn khi tích hợp thêm các chức năng nâng cao theo đề xuất cải tiến như: Thiết lập tính năng thông báo nổi (Toast Notification) thời gian thực khi hệ thống ghi nhận có đơn hàng mới.
-- Gặp khó khăn khi viết logic gợi ý thông minh, tự động kiểm tra trùng khớp thông tin khách hàng cũ dựa trên bộ dữ liệu có sẵn để gợi ý tạo mới hoặc liên kết profile khách hàng tại trang Admin.
-- Việc thử nghiệm cấu hình Realtime tiêu tốn rất nhiều thời gian nghiên cứu và chỉnh sửa cấu hình hệ thống.
-
-4. Kết quả đạt được
-- Hoàn thiện toàn bộ các màn hình quản trị dữ liệu CRUD phía giao diện Admin.
-- Tích hợp thành công phần phân quyền cơ bản bảo vệ các tuyến đường dẫn (Route) của Admin.
+## 4. Kết quả đạt được
+- Hoàn thành toàn bộ các chức năng quản trị cốt lõi (đạt 85% khối lượng công việc Back-end).
+- Hệ thống đã hiển thị động dữ liệu bài viết và hình ảnh phong cảnh, dịch vụ du lịch Ba Động lên trang chủ Client.
